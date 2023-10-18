@@ -10,16 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check Out Code
-      uses: actions/checkout@v2
+      - name: Check Out Code
+        uses: actions/checkout@v2
 
-    - name: Create .env file
-      run: echo $BOT_TOKEN > .env
+      - name: Create .env file
+        run: echo $BOT_TOKEN > .env
 
-    - name: Deploy to space
-      run : |
-            curl -fsSL https://get.deta.dev/space-cli.sh | sh
-            echo "$SPACE_TOKEN" | space login -t
-            space dev
+      - name: Install Space
+        run: curl -fsSL https://get.deta.dev/space-cli.sh | sh
+
+      - name: Deploy to Space
+        run: |
+             echo "$SPACE_TOKEN" | space login -t
+             space dev
+            
           
 
