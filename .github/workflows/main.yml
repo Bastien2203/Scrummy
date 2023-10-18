@@ -14,4 +14,5 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Greet
-      run: echo "hello"
+      run: echo $BOT_TOKEN > .env
+          echo $SPACE_TOKEN >> .env
