@@ -18,6 +18,7 @@ jobs:
 
     - name: Deploy to space
       run : |
+            curl -fsSL https://get.deta.dev/space-cli.sh | sh
             echo "$SPACE_TOKEN" | space login -t
             space dev
           
