@@ -17,7 +17,7 @@ jobs:
         run: echo $BOT_TOKEN > .env
 
       - name: Install Space
-        run: curl -fsSL https://get.deta.dev/space-cli.sh | sh
+        run: curl -fsSL https://deta.space/assets/space-cli.sh | sh
 
       - name: Deploy to Space
         run: |
