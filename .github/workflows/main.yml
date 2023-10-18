@@ -6,13 +6,19 @@ on:
       - main
 
 jobs:
-  greet:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Check Out Code
       uses: actions/checkout@v2
 
-    - name: Greet
+    - name: Create .env file
       run: echo $BOT_TOKEN > .env
-          echo $SPACE_TOKEN >> .env
+
+    - name: Deploy to space
+      run : |
+            echo "$SPACE_TOKEN" | space login -t
+            space dev
+          
+
