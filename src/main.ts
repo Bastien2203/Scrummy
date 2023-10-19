@@ -2,6 +2,7 @@ import { Client, GatewayIntentBits } from 'discord.js'
 import { config } from 'dotenv'
 const express = require('express')
 
+config({ path: `.env.local`, override: true })
 config({ path: `.env`, override: true })
 
 const server = express()
@@ -15,8 +16,6 @@ server.listen(3000, () => {
 })
 
 if (!process.env.BOT_TOKEN) {
-  console.log(process.env)
-  console.log(process.env.BOT_TOKEN)
   throw new Error(`Undefined BOT_TOKEN`)
 }
 
