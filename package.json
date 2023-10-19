@@ -6,9 +6,9 @@
   },
   "main": "build/main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "mkdir build && tsc",
     "start": "node ./build/main.js",
-    "dev": "yarn build && yarn start"
+    "dev": "tsc && yarn start"
   },
   "devDependencies": {
     "@types/express": "^4.17.20",
