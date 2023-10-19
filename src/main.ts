@@ -1,5 +1,6 @@
 import { config } from 'dotenv'
 import { Client, GatewayIntentBits } from 'discord.js'
+import * as process from 'process'
 const express = require('express')
 
 config()
@@ -16,7 +17,7 @@ server.listen(3000, () => {
 })
 
 if (!process.env.BOT_TOKEN) {
-  throw new Error('Undefined BOT_TOKEN')
+  throw new Error(`Undefined BOT_TOKEN ${process.env}`)
 }
 
 const client = new Client({
