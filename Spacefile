@@ -8,6 +8,3 @@ micros:
     commands:
         - yarn build
     run: node ./build/main.js
-    presets:
-      env:
-        - name: BOT_TOKEN

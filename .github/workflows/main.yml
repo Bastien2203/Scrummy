@@ -14,11 +14,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create .env.local file
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
-          sed -i "s/\(- name: BOT_TOKEN\)/\1\n          description: $BOT_TOKEN/" Spacefile
-          cat Spacefile
+              echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" > .env
 
       - name: Install Space
         run: curl -fsSL https://deta.space/assets/space-cli.sh | sh
@@ -28,6 +25,7 @@ jobs:
              bash
              echo ${{ secrets.SPACE_TOKEN }} | /home/runner/.detaspace/bin/space login -t
              /home/runner/.detaspace/bin/space link -i ${{ secrets.PROJECT_ID }}
+             /home/runner/.detaspace/bin/space builder env --get .env --micro scrummy
              /home/runner/.detaspace/bin/space push
             
           
