@@ -11,4 +11,3 @@ micros:
     presets:
       env:
         - name: BOT_TOKEN
-          description:
