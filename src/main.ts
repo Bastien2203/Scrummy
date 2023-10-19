@@ -1,12 +1,16 @@
 import { config } from 'dotenv'
 import { Client, GatewayIntentBits } from 'discord.js'
-import express from 'express'
+const express = require('express')
 config()
 
 const server = express()
 
-server.use('/webhook', (req, res) => {
+server.get('/webhook', (req, res) => {
   res.send(200)
+})
+
+server.listen(3000, () => {
+  console.log(`Example app listening on port ${3000}`)
 })
 
 if (!process.env.BOT_TOKEN) {
