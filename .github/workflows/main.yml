@@ -22,7 +22,7 @@ jobs:
       - name: Deploy to Space
         run: |
              bash
-             echo "$SPACE_TOKEN" | /home/runner/.detaspace/bin/space login -t
+             echo ${{ secrets.SPACE_TOKEN }} | /home/runner/.detaspace/bin/space login -t
              /home/runner/.detaspace/bin/space dev
             
           
