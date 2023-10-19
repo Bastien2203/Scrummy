@@ -2,6 +2,7 @@
 v: 0
 micros:
   - name: scrummy
-    src: ./
+    src: ./build/main.js
     engine: nodejs16
     primary: true
+    run: yarn start

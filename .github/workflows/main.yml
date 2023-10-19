@@ -23,7 +23,8 @@ jobs:
         run: |
              bash
              echo ${{ secrets.SPACE_TOKEN }} | /home/runner/.detaspace/bin/space login -t
-             /home/runner/.detaspace/bin/space dev
+             /home/runner/.detaspace/bin/space link -i ${{ secrets.PROJECT_ID }}
+             /home/runner/.detaspace/bin/space push
             
           
 
