@@ -1,7 +1,9 @@
 import { config } from 'dotenv'
 import { Client, GatewayIntentBits } from 'discord.js'
 const express = require('express')
+
 config()
+config({ path: `.env.local`, override: true })
 
 const server = express()
 

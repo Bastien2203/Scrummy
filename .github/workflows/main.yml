@@ -13,8 +13,8 @@ jobs:
       - name: Check Out Code
         uses: actions/checkout@v2
 
-      - name: Create .env file
-        run: echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" > .env
+      - name: Create .env.local file
+        run: echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" > .env.local
 
 
       - name: Install Space
