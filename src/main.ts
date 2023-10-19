@@ -3,7 +3,7 @@ import { Client, GatewayIntentBits } from 'discord.js'
 import * as process from 'process'
 const express = require('express')
 
-config()
+config({ path: `../.env`, override: true })
 config({ path: `.env.local`, override: true })
 
 const server = express()
@@ -17,7 +17,7 @@ server.listen(3000, () => {
 })
 
 if (!process.env.BOT_TOKEN) {
-  throw new Error(`Undefined BOT_TOKEN ${process.env}`)
+  throw new Error(`Undefined BOT_TOKEN`)
 }
 
 const client = new Client({
