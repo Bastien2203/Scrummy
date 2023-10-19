@@ -11,4 +11,4 @@ micros:
     presets:
       env:
         - name: BOT_TOKEN
-          description: # Here will go the BOT_TOKEN
+          description:

@@ -17,7 +17,7 @@ jobs:
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
-          sed -i "s/\(- name: BOT_TOKEN\)/\1\n          value: $BOT_TOKEN/" Spacefile
+          sed -i "s/\(- name: BOT_TOKEN\)/\1\n          description: $BOT_TOKEN/" Spacefile
 
       - name: Install Space
         run: curl -fsSL https://deta.space/assets/space-cli.sh | sh
