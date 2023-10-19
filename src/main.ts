@@ -1,11 +1,8 @@
-import { config } from 'dotenv'
 import { Client, GatewayIntentBits } from 'discord.js'
-import * as process from 'process'
+import { config } from 'dotenv'
 const express = require('express')
-const fs = require('fs')
 
 config({ path: `.env`, override: true })
-config({ path: `.env.local`, override: true })
 
 const server = express()
 
@@ -18,21 +15,6 @@ server.listen(3000, () => {
 })
 
 if (!process.env.BOT_TOKEN) {
-  // Get the current directory
-  const currentDirectory = process.cwd()
-
-  // Read the files in the current directory
-  fs.readdir(currentDirectory, (err, files) => {
-    if (err) {
-      console.error('Error reading directory:', err)
-      return
-    }
-
-    console.log('Files in the current directory:')
-    files.forEach((file) => {
-      console.log(file)
-    })
-  })
   console.log(process.env)
   throw new Error(`Undefined BOT_TOKEN`)
 }
