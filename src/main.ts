@@ -3,7 +3,7 @@ import { Client, GatewayIntentBits } from 'discord.js'
 import * as process from 'process'
 const express = require('express')
 
-config({ path: `../.env`, override: true })
+config({ path: `.env`, override: true })
 config({ path: `.env.local`, override: true })
 
 const server = express()
