@@ -17,6 +17,7 @@ server.listen(3000, () => {
 })
 
 if (!process.env.BOT_TOKEN) {
+  console.log(process.env)
   throw new Error(`Undefined BOT_TOKEN`)
 }
 
