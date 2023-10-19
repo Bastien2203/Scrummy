@@ -7,7 +7,7 @@
   },
   "main": "build/main.js",
   "scripts": {
-    "prestart": "tsc",
+    "build": "tsc",
     "start": "node ./build/main.js"
   },
   "devDependencies": {
