@@ -25,7 +25,7 @@ jobs:
              bash
              echo ${{ secrets.SPACE_TOKEN }} | /home/runner/.detaspace/bin/space login -t
              /home/runner/.detaspace/bin/space link -i ${{ secrets.PROJECT_ID }}
-             /home/runner/.detaspace/bin/space builder env --get .env --micro scrummy
+             /home/runner/.detaspace/bin/space builder env --set .env --micro scrummy
              /home/runner/.detaspace/bin/space push
             
           
