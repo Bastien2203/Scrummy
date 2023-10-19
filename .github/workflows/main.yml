@@ -18,6 +18,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
           sed -i "s/\(- name: BOT_TOKEN\)/\1\n          description: $BOT_TOKEN/" Spacefile
+          cat Spacefile
 
       - name: Install Space
         run: curl -fsSL https://deta.space/assets/space-cli.sh | sh
