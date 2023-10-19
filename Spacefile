@@ -6,5 +6,6 @@ micros:
     engine: nodejs16
     primary: true
     commands:
+        - npm install -g yarn
         - yarn build
     run: yarn start
