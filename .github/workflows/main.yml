@@ -17,6 +17,7 @@ jobs:
         run: |
               echo ${{ secrets.BOT_TOKEN }} > .env
               ls -al
+              cat .env
 
       - name: Install Space
         run: curl -fsSL https://deta.space/assets/space-cli.sh | sh
